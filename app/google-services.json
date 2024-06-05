@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "988113232792",
+    "project_id": "aplikasiposyandu-mobile",
+    "storage_bucket": "aplikasiposyandu-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988113232792:android:3dd80d37830f21f3f701ed",
+        "android_client_info": {
+          "package_name": "com.example.aplikasiposyandu_mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "\nAIzaSyA-m2lKNXLzAkfzPlI3FiD7KWzAvwigy6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
