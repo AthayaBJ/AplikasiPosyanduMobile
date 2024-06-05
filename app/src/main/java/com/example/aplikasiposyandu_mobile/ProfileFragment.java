@@ -63,11 +63,11 @@ public class ProfileFragment extends Fragment {
         dashboard.setOnClickListener(v -> {
             if (role.equals("Agency")) {
                 Log.d("Role", "sharedpreferences: " + role);
-                Intent intent = new Intent(getActivity(), DashboardActivity.class);
+                Intent intent = new Intent(getActivity(), StatusActivity.class);
                 startActivity(intent);
             }else {
                 Log.d("Role", "sharedpreferences: " + role);
-                Intent intent = new Intent(getActivity(), DashboardRegisterActivity.class);
+                Intent intent = new Intent(getActivity(), StatusActivity.class);
                 startActivity(intent);
             }
         });
@@ -77,11 +77,6 @@ public class ProfileFragment extends Fragment {
             String email = sharedPreferences.getString("email", "");
             nama_akun.setText(nama);
             email_akun.setText(email);
-//            if (role != "agency"){
-//                dashboard.setText("Daftar bimbel");
-//                Log.d("role", "onCreateView: "+role);
-//            }
-
         }catch(Exception e){
             Log.e("Data error", String.valueOf(e));
         }

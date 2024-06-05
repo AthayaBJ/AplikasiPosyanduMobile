@@ -21,7 +21,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="center_horizontal"
-            android:padding="24dp">
+            android:padding="24dp"
+            android:background="@drawable/border">
 
             <TextView
                 android:layout_width="match_parent"
@@ -29,26 +30,31 @@
                 android:text="Login"
                 android:textSize="36sp"
                 android:textAlignment="center"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/Ledt_Email"
+                android:id="@+id/Ledt_email"
+                android:background="@drawable/border"
                 android:layout_marginTop="40dp"
                 android:padding="8dp"
                 android:hint="Email"
+                android:drawableLeft="@drawable/ic_launcher_email"
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/Ledt_Pass"
+                android:id="@+id/Ledt_password"
+                android:background="@drawable/border"
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
                 android:hint="Password"
                 android:inputType="textPassword"
+                android:drawableLeft="@drawable/ic_launcher_lock"
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"/>
 
@@ -56,36 +62,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="Login"
-                android:id="@+id/Ledt_btn"
+                android:id="@+id/btn_login"
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"
-                app:cornerRadius="20dp"/>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:id="@+id/layout_loading">
-
-                <ProgressBar
-                    android:id="@+id/progressBar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:visibility="gone"/>
-            </LinearLayout>
+                android:backgroundTint="#000000"
+                app:cornerRadius="20dp"
+                android:textColor="@android:color/white"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/MoveToRegistert"
-                android:text="Belum memiliki akun? Register"
+                android:id="@+id/MoveToRegister"
+                android:text="Belum memiliki akun ? Register"
                 android:layout_gravity="center"
                 android:padding="8dp"
                 android:layout_marginTop="10dp"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+
+            <!-- ProgressBar -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
 
         </LinearLayout>
 
