@@ -44,10 +44,10 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        edt_email = findViewById(R.id.Ledt_Email);
-        edt_pass = findViewById(R.id.Ledt_Pass);
-        btn_login = findViewById(R.id.Ledt_btn);
-        to_register = findViewById(R.id.MoveToRegistert);
+        edt_email = findViewById(R.id.Ledt_email);
+        edt_pass = findViewById(R.id.Ledt_password);
+        btn_login = findViewById(R.id.btn_login);
+        to_register = findViewById(R.id.MoveToRegister);
         progressBar = findViewById(R.id.progressBar);
 
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
