@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F5F5F5"
     tools:context=".ProfileFragment">
 
     <TextView
@@ -10,18 +12,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Akun"
-        android:textSize="16sp"
+        android:textSize="24sp"
         android:textColor="@color/black"
-        android:layout_marginTop="26dp"
-        android:layout_marginLeft="32dp"/>
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:fontFamily="sans-serif-medium"/>
 
     <ImageView
         android:id="@+id/img_akun"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_below="@+id/txt_akun"
-        android:layout_marginTop="27dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:background="#D3D3D3"
+        android:contentDescription="Profile Image"
+        android:scaleType="centerCrop"
+        tools:src="@tools:sample/avatars[9]" />
 
     <TextView
         android:id="@+id/nama_akun"
@@ -29,11 +36,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/img_akun"
         android:text="Your Name"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textColor="@color/black"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif"/>
 
     <TextView
         android:id="@+id/email_akun"
@@ -43,60 +50,69 @@
         android:text="yourname@gmail.com"
         android:textSize="14sp"
         android:textColor="@color/black"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="sans-serif-light"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/email_akun"
+        android:layout_marginTop="16dp"
+        android:background="#CCCCCC"/>
 
     <Button
         android:id="@+id/dashboard"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/email_akun"
+        android:layout_marginTop="24dp"
         android:text="Status"
         android:textAllCaps="false"
         android:gravity="center_vertical|start"
         android:drawablePadding="8dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/border"
+        android:background="@drawable/button_border"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:drawableLeft="@drawable/ic_launcher_status"
-        android:layout_marginTop="32dp"
-        android:paddingVertical="10dp"
-        android:paddingHorizontal="16dp"/>
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="16dp"
+        android:fontFamily="sans-serif"/>
 
     <Button
         android:id="@+id/ganti_pass"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dashboard"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/button_border"
+        android:drawableLeft="@drawable/ic_launcher_lock"
+        android:drawablePadding="8dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center_vertical|start"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
         android:text="Ganti password"
         android:textAllCaps="false"
-        android:gravity="center_vertical|start"
-        android:drawablePadding="8dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/border"
         android:textColor="@color/black"
-        android:textSize="16sp"
-        android:drawableLeft="@drawable/ic_launcher_lock"
-        android:layout_marginTop="8dp"
-        android:paddingVertical="10dp"
-        android:paddingHorizontal="16dp"/>
+        android:textSize="16sp"/>
 
     <Button
         android:id="@+id/logout"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ganti_pass"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/button_border"
+        android:drawableLeft="@drawable/ic_launcher_logout"
+        android:drawablePadding="8dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center_vertical|start"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
         android:text="Logout"
         android:textAllCaps="false"
-        android:gravity="center_vertical|start"
-        android:drawablePadding="8dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/border"
         android:textColor="#EE1E1E"
-        android:textSize="16sp"
-        android:drawableLeft="@drawable/ic_launcher_logout"
-        android:layout_marginTop="8dp"
-        android:paddingVertical="10dp"
-        android:paddingHorizontal="16dp"/>
+        android:textSize="16sp"/>
 
 </RelativeLayout>
