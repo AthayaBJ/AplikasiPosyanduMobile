@@ -1,14 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/txt_akun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Akun"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="26dp"
+        android:layout_marginLeft="32dp"/>
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/img_akun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_akun"
+        android:layout_marginTop="27dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/nama_akun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_akun"
+        android:text="Your Name"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/email_akun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nama_akun"
+        android:text="yourname@gmail.com"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/dashboard"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/email_akun"
+        android:text="Status"
+        android:textAllCaps="false"
+        android:gravity="center_vertical|start"
+        android:drawablePadding="8dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:drawableLeft="@drawable/ic_launcher_status"
+        android:layout_marginTop="32dp"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="16dp"/>
+
+    <Button
+        android:id="@+id/ganti_pass"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dashboard"
+        android:text="Ganti password"
+        android:textAllCaps="false"
+        android:gravity="center_vertical|start"
+        android:drawablePadding="8dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:drawableLeft="@drawable/ic_launcher_lock"
+        android:layout_marginTop="8dp"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="16dp"/>
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ganti_pass"
+        android:text="Logout"
+        android:textAllCaps="false"
+        android:gravity="center_vertical|start"
+        android:drawablePadding="8dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border"
+        android:textColor="#EE1E1E"
+        android:textSize="16sp"
+        android:drawableLeft="@drawable/ic_launcher_logout"
+        android:layout_marginTop="8dp"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="16dp"/>
+
+</RelativeLayout>
