@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
             Intent login = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(login);
             finish();
+            return;  // Ensure no further code is executed
         }
 
         bottomNavigationView = findViewById(R.id.bottomView);
