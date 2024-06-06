@@ -110,6 +110,9 @@ public class ProfileFragment extends Fragment {
 
             startActivity(intent);
             getActivity().finish();
+
+            // Show logout message
+            Toast.makeText(getContext(), "Logout berhasil", Toast.LENGTH_SHORT).show();
         });
 
         btnGantiPass.setOnClickListener(v -> {
