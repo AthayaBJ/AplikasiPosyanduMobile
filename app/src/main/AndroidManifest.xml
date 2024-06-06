@@ -18,6 +18,9 @@
         android:theme="@style/Theme.AplikasiPosyanduMobile"
         tools:targetApi="31">
         <activity
+            android:name=".Imunisasi"
+            android:exported="false" />
+        <activity
             android:name=".StatusActivity"
             android:exported="false" />
         <activity

@@ -59,15 +59,15 @@
                 android:textColor="@color/black"/>
 
             <Button
+                android:id="@+id/btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Login"
-                android:id="@+id/btn_login"
-                android:textSize="18sp"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="#000000"
-                app:cornerRadius="20dp"
-                android:textColor="@android:color/white"/>
+                android:backgroundTint="#0B0B0B"
+                android:text="Login"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
