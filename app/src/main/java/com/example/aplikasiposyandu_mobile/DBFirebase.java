@@ -8,7 +8,6 @@ public class DBFirebase {
     private DatabaseReference mDatabase;
 
     public DBFirebase() {
-        // Use the correct database URL for your region
         FirebaseDatabase database = FirebaseDatabase.getInstance("https://aplikasiposyandu-mobile-default-rtdb.asia-southeast1.firebasedatabase.app");
         mDatabase = database.getReference();
     }

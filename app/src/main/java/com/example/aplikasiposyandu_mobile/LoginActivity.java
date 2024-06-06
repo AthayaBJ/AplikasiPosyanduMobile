@@ -82,9 +82,13 @@ public class LoginActivity extends AppCompatActivity {
 
                                     String nama = snapshot.child("name").getValue(String.class);
                                     String email = snapshot.child("email").getValue(String.class);
+                                    String telephone = snapshot.child("telephone").getValue(String.class);
+                                    String address = snapshot.child("address").getValue(String.class);
 
                                     editor.putString("nama", nama);
                                     editor.putString("email", email);
+                                    editor.putString("telephone", telephone);
+                                    editor.putString("address", address);
                                     editor.putBoolean("masuk", true);
                                     editor.apply();
 
