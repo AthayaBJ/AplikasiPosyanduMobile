@@ -11,7 +11,7 @@
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_imunisasi"
+        android:id="@+id/contener_imunisasi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
