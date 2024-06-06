@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <item
+                android:id="@+id/btn_status"
+                android:title="Status"
+                app:showAsAction="never"
+                android:icon="@drawable/ic_launcher_status"
+                />
+
+            <item
+                android:id="@+id/btn_change_pass"
+                android:title="Ubah Password"
+                app:showAsAction="never"
+                android:icon="@drawable/ic_launcher_lock"
+                />
+
+            <item
+                android:id="@+id/btn_logout"
+                android:title="Logout"
+                app:showAsAction="never"
+                android:icon="@drawable/ic_launcher_logout"
+                />
+</menu>

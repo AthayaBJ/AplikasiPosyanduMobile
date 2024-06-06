@@ -93,7 +93,6 @@
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"/>
 
-            <!-- Replaced Button with MaterialButton for cornerRadius attribute -->
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -113,6 +112,14 @@
                 android:padding="8dp"
                 android:layout_marginTop="10dp"
                 android:textSize="18sp"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"/>
 
         </LinearLayout>
 

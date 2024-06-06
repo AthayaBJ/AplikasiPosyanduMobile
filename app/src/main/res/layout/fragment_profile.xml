@@ -24,7 +24,7 @@
         android:layout_height="100dp"
         android:layout_below="@+id/txt_akun"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="45dp"
         android:background="#D3D3D3"
         android:contentDescription="Profile Image"
         android:scaleType="centerCrop"
@@ -39,7 +39,7 @@
         android:textSize="18sp"
         android:textColor="@color/black"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="15dp"
         android:fontFamily="sans-serif"/>
 
     <TextView
@@ -91,7 +91,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/alamat_akun"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="30dp"
         android:text="Status"
         android:textAllCaps="false"
         android:gravity="center_vertical|start"
@@ -127,7 +127,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ganti_pass"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/button_border"
         android:drawableLeft="@drawable/ic_launcher_logout"
         android:drawablePadding="8dp"
