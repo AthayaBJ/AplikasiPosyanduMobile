@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:hint="Nama Anak"
         android:inputType="textPersonName"
-        android:background="@drawable/border"
+        android:background="@drawable/button_border"
         android:padding="10dp"
         android:layout_marginBottom="10dp"/>
 
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:hint="Umur"
         android:inputType="number"
-        android:background="@drawable/border"
+        android:background="@drawable/button_border"
         android:padding="10dp"
         android:layout_marginBottom="10dp"/>
 
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:hint="NIK"
         android:inputType="text"
-        android:background="@drawable/border"
+        android:background="@drawable/button_border"
         android:padding="10dp"
         android:layout_marginBottom="10dp"/>
 
@@ -45,7 +45,15 @@
         android:layout_height="wrap_content"
         android:hint="Tanggal Imunisasi"
         android:inputType="date"
-        android:background="@drawable/border"
+        android:background="@drawable/button_border"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <Spinner
+        android:id="@+id/lokasiSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_border"
         android:padding="10dp"
         android:layout_marginBottom="10dp"/>
 
@@ -53,8 +61,7 @@
         android:id="@+id/submitButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#000000"
-        android:text="submit" />
-
-
+        android:backgroundTint="@android:color/black"
+        android:text="Submit"
+        android:textColor="@android:color/white" />
 </LinearLayout>
