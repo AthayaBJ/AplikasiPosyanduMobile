@@ -111,10 +111,15 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, "Database error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });
-                    } else {
+                    }  else {
                         btn_login.setEnabled(true);
                         progressBar.setVisibility(View.GONE);
-                        Toast.makeText(LoginActivity.this, "Authentication failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        String errorMessage = task.getException() != null ? task.getException().getMessage() : "Authentication failed";
+                        if (errorMessage.contains("The supplied auth credential is incorrect, malformed or has expired")) {
+                            Toast.makeText(LoginActivity.this, "Akun belum terdaftar. silahkan registrasi terlebih dahulu.", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(LoginActivity.this, "Authentication failed: " + errorMessage, Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
             });
