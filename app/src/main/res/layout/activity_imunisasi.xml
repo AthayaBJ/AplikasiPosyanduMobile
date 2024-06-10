@@ -13,49 +13,54 @@
         android:id="@+id/namaAnak"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_border"
         android:hint="Nama Anak"
         android:inputType="textPersonName"
-        android:background="@drawable/button_border"
-        android:padding="10dp"
-        android:layout_marginBottom="10dp"/>
+        android:minHeight="48dp"
+        android:padding="10dp" />
 
     <EditText
         android:id="@+id/umur"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_border"
         android:hint="Umur"
         android:inputType="number"
-        android:background="@drawable/button_border"
         android:padding="10dp"
-        android:layout_marginBottom="10dp"/>
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/nik"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_border"
         android:hint="NIK"
         android:inputType="text"
-        android:background="@drawable/button_border"
-        android:padding="10dp"
-        android:layout_marginBottom="10dp"/>
+        android:minHeight="48dp"
+        android:padding="10dp" />
 
     <EditText
         android:id="@+id/tanggalImunisasi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_border"
         android:hint="Tanggal Imunisasi"
         android:inputType="date"
-        android:background="@drawable/button_border"
-        android:padding="10dp"
-        android:layout_marginBottom="10dp"/>
+        android:minHeight="48dp"
+        android:padding="10dp" />
 
     <Spinner
         android:id="@+id/lokasiSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/button_border"
-        android:padding="10dp"
-        android:layout_marginBottom="10dp"/>
+        android:minHeight="48dp"
+        android:padding="10dp" />
 
     <Button
         android:id="@+id/submitButton"
