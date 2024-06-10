@@ -21,4 +21,17 @@ public class DBFirebase {
             Log.e("Write Data Error", String.valueOf(e));
         }
     }
+
+    public void addImunisasiData(ImunisasiData imunisasiData) {
+        try {
+            String id = mDatabase.child("imunisasi").push().getKey();
+            if (id != null) {
+                imunisasiData.setId(id);
+                mDatabase.child("imunisasi").child(id).setValue(imunisasiData);
+                Log.d("Write Data Success", "successfully");
+            }
+        } catch (Exception e) {
+            Log.e("Write Data Error", String.valueOf(e));
+        }
+    }
 }

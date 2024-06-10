@@ -9,6 +9,35 @@
     android:orientation="vertical"
     tools:context=".Imunisasi">
 
+    <LinearLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/backline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_louncher_backline"
+            android:contentDescription="Back"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Imunisasi Anak"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
+    </LinearLayout>
+
     <EditText
         android:id="@+id/namaAnak"
         android:layout_width="match_parent"
