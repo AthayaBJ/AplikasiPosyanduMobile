@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Other strings -->
+    <string-array name="lokasi_array">
+        <item>Lokasi 1</item>
+        <item>Lokasi 2</item>
+        <item>Lokasi 3</item>
+        <item>Lokasi 4</item>
+    </string-array>
+</resources>
