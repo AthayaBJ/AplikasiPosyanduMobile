@@ -1,6 +1,7 @@
 package com.example.aplikasiposyandu_mobile;
 
 public class ImunisasiData {
+    private final String userID;
     private String id;
     private String nama;
     private String umur;
@@ -8,12 +9,14 @@ public class ImunisasiData {
     private String tanggalImunisasi;
     private String lokasi;
 
-    public ImunisasiData(String nama, String umur, String nik, String tanggalImunisasi, String lokasi, String userID) {
+    public ImunisasiData(String id, String nama, String umur, String nik, String tanggalImunisasi, String lokasi, String userID) {
+        this.id = id;
         this.nama = nama;
         this.umur = umur;
         this.nik = nik;
         this.tanggalImunisasi = tanggalImunisasi;
         this.lokasi = lokasi;
+        this.userID = userID;
     }
 
     public String getId() {
