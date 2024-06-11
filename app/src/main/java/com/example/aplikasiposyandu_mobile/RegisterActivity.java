@@ -88,14 +88,6 @@ public class RegisterActivity extends AppCompatActivity {
 
                                         startActivity(intent);
                                         finish();
-//                                    try{
-//                                    }catch(Exception e){
-//                                        Log.e("Register Fail", String.valueOf(e));
-//                                        Toast.makeText(RegisterActivity.this, "Registrasi Gagal !", Toast.LENGTH_SHORT).show();
-//                                    }finally {
-//
-//                                    }
-
                                     }else{
                                         // If sign in fails, display a message to the user.
                                         Log.w("Failed Auth", "createUserWithEmail:failure", task.getException());

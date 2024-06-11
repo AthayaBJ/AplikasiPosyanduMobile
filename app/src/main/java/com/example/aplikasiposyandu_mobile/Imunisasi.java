@@ -72,11 +72,12 @@ public class Imunisasi extends AppCompatActivity {
                 if (nama.isEmpty() || umurAnak.isEmpty() || nikAnak.isEmpty() || tanggal.isEmpty() || lokasi.isEmpty()) {
                     Toast.makeText(Imunisasi.this, "Harap isi semua field", Toast.LENGTH_SHORT).show();
                 } else {
-                    ImunisasiData imunisasiData = new ImunisasiData(nama, umurAnak, nikAnak, tanggal, lokasi, userID);
+                    // ID imunisasi dan ID pendaftaran dijadikan sama dengan userID
+                    ImunisasiData imunisasiData = new ImunisasiData(userID, nama, umurAnak, nikAnak, tanggal, lokasi, userID);
                     dbFirebase.addImunisasiData(imunisasiData);
 
                     Toast.makeText(Imunisasi.this, "Registrasi berhasil",Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(Imunisasi.this, HomeFragment.class);
+                    Intent intent = new Intent(Imunisasi.this, MainActivity.class);
                     startActivity(intent);
                     finish();
                 }
