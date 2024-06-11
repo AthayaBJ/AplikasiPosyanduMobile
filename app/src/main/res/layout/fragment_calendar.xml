@@ -6,14 +6,18 @@
     <CalendarView
         android:id="@+id/calendar_view"
         android:layout_width="match_parent"
-        android:layout_height="400dp" />
+        android:layout_height="400dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-3dp" />
 
-    <TimePicker
-        android:id="@+id/time_picker"
+    <TextView
+        android:id="@+id/schedule_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/calendar_view"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:timePickerMode="spinner" />
+        android:text="Pilih tanggal untuk melihat jadwal"
+        android:textSize="18sp" />
+
 </RelativeLayout>

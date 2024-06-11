@@ -5,13 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CalendarView;
-import android.widget.TimePicker;
+import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 public class CalendarFragment extends Fragment {
 
     private CalendarView calendarView;
-    private TimePicker  timePicker;
+    private TextView scheduleText;
 
     public CalendarFragment() {
         // Required empty public constructor
@@ -31,9 +31,13 @@ public class CalendarFragment extends Fragment {
         // Initialize the CalendarView
         calendarView = view.findViewById(R.id.calendar_view);
 
-        // Initialize the TimePicker
-        timePicker = view.findViewById(R.id.time_picker);
-        timePicker.setIs24HourView(true);
+        // Initialize the TextView
+        scheduleText = view.findViewById(R.id.schedule_text);
+
+        // Example schedule data
+        final Map<String, String> scheduleData = new HashMap<>();
+        scheduleData.put("15/6/2024", "Pemeriksaan Balita pada jam 10:00 AM");
+        scheduleData.put("20/6/2024", "Pemberian Imunisasi pada jam 08:00 AM");
 
         // Set listener for date selection
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -41,21 +45,15 @@ public class CalendarFragment extends Fragment {
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
                 // Handle the selected date here
                 String selectedDate = dayOfMonth + "/" + (month + 1) + "/" + year;
-                // You can perform any action with the selectedDate, like displaying it in a TextView
-                // or passing it to another activity
+                String schedule = scheduleData.get(selectedDate);
+                if (schedule != null) {
+                    scheduleText.setText("Jadwal untuk tanggal " + selectedDate + ":\n" + schedule);
+                } else {
+                    scheduleText.setText("Tidak ada jadwal untuk tanggal " + selectedDate);
+                }
             }
         });
 
-        // Set listener for time selection
-        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
-            @Override
-            public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
-                // Handle the selected time here
-                String selectedTime = hourOfDay + ":" + minute;
-                // You can perform any action with the selectedTime, like displaying it in a TextView
-                // or passing it to another activity
-            }
-        });
         return view;
     }
 }
