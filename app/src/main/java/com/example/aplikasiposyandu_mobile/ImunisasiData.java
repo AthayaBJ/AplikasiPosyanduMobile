@@ -8,7 +8,7 @@ public class ImunisasiData {
     private String tanggalImunisasi;
     private String lokasi;
 
-    public ImunisasiData(String nama, String umur, String nik, String tanggalImunisasi, String lokasi) {
+    public ImunisasiData(String nama, String umur, String nik, String tanggalImunisasi, String lokasi, String userID) {
         this.nama = nama;
         this.umur = umur;
         this.nik = nik;

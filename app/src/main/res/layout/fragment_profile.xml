@@ -7,22 +7,31 @@
     android:background="#F5F5F5"
     tools:context=".ProfileFragment">
 
-    <TextView
-        android:id="@+id/txt_akun"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Profile Akun"
-        android:textSize="24sp"
-        android:textColor="@color/black"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:fontFamily="sans-serif-medium"/>
+        android:background="#000000"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Profile Akun"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/img_akun"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_below="@+id/txt_akun"
+        android:layout_below="@+id/top_layout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="45dp"
         android:background="#D3D3D3"
@@ -37,7 +46,7 @@
         android:layout_below="@+id/img_akun"
         android:text="Your Name"
         android:textSize="18sp"
-        android:textColor="@color/black"
+        android:textColor="@android:color/black"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:fontFamily="sans-serif"/>
@@ -49,7 +58,7 @@
         android:layout_below="@+id/nama_akun"
         android:text="yourname@gmail.com"
         android:textSize="14sp"
-        android:textColor="@color/black"
+        android:textColor="@android:color/black"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="4dp"
         android:fontFamily="sans-serif-light"/>
@@ -61,7 +70,7 @@
         android:layout_below="@+id/email_akun"
         android:text="081234567890"
         android:textSize="14sp"
-        android:textColor="@color/black"
+        android:textColor="@android:color/black"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="4dp"
         android:fontFamily="sans-serif-light"/>
@@ -73,7 +82,7 @@
         android:layout_below="@+id/telepon_akun"
         android:text="Alamat"
         android:textSize="14sp"
-        android:textColor="@color/black"
+        android:textColor="@android:color/black"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="16dp"
@@ -97,7 +106,7 @@
         android:gravity="center_vertical|start"
         android:drawablePadding="8dp"
         android:background="@drawable/button_border"
-        android:textColor="@color/black"
+        android:textColor="@android:color/black"
         android:textSize="16sp"
         android:drawableLeft="@drawable/ic_launcher_status"
         android:paddingVertical="12dp"
@@ -119,7 +128,7 @@
         android:paddingVertical="12dp"
         android:text="Ubah Password"
         android:textAllCaps="false"
-        android:textColor="@color/black"
+        android:textColor="@android:color/black"
         android:textSize="16sp"/>
 
     <Button

@@ -1,13 +1,19 @@
 package com.example.aplikasiposyandu_mobile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Imunisasi extends AppCompatActivity {
 
@@ -25,6 +31,7 @@ public class Imunisasi extends AppCompatActivity {
         EditText tanggalImunisasi = findViewById(R.id.tanggalImunisasi);
         Spinner lokasiSpinner = findViewById(R.id.lokasiSpinner);
         Button submitButton = findViewById(R.id.submitButton);
+        ImageView backline = findViewById(R.id.backline);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.lokasi_array, android.R.layout.simple_spinner_item);
@@ -40,11 +47,31 @@ public class Imunisasi extends AppCompatActivity {
                 String tanggal = tanggalImunisasi.getText().toString();
                 String lokasi = lokasiSpinner.getSelectedItem().toString();
 
-                ImunisasiData imunisasiData = new ImunisasiData(nama, umurAnak, nikAnak, tanggal, lokasi);
+                // Mendapatkan ID user dari Firebase Authentication
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                String userID = user.getUid();
 
-                dbFirebase.addImunisasiData(imunisasiData);
+                if (nama.isEmpty() || umurAnak.isEmpty() || nikAnak.isEmpty() || tanggal.isEmpty() || lokasi.isEmpty()) {
+                    Toast.makeText(Imunisasi.this, "Harap isi semua field", Toast.LENGTH_SHORT).show();
+                } else {
+                    ImunisasiData imunisasiData = new ImunisasiData(nama, umurAnak, nikAnak, tanggal, lokasi, userID);
+                    dbFirebase.addImunisasiData(imunisasiData);
 
-                Toast.makeText(Imunisasi.this, "Data: " + nama + ", " + umurAnak + ", " + nikAnak + ", " + tanggal + ", " + lokasi, Toast.LENGTH_LONG).show();
+                    Toast.makeText(Imunisasi.this, "Registrasi berhasil",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(Imunisasi.this, HomeFragment.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        });
+
+        // Tombol backline
+        backline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Mengganti inisialisasi HomeFragment dengan HomeActivity
+                Intent intent = new Intent(Imunisasi.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }
