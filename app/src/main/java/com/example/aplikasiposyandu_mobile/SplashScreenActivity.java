@@ -7,8 +7,11 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
 public class SplashScreenActivity extends AppCompatActivity {
     private static final String TAG = "SplashScreenActivity";
@@ -26,13 +29,16 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         // Get FCM token
         FirebaseMessaging.getInstance().getToken()
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful() && task.getResult() != null) {
-                        String token = task.getResult();
-                        Log.d(TAG, "FCM Token: " + token);
-                        // You can save the token to shared preferences or send it to your server here
-                    } else {
-                        Log.e(TAG, "Failed to get FCM token: " + task.getException());
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(Task<String> task) {
+                        if (task.isSuccessful() && task.getResult() != null) {
+                            String token = task.getResult();
+                            Log.d(TAG, "FCM Token: " + token);
+                            // You can save the token to shared preferences or send it to your server here
+                        } else {
+                            Log.e(TAG, "Failed to get FCM token: ", task.getException());
+                        }
                     }
                 });
 

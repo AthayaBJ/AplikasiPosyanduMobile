@@ -76,8 +76,11 @@ public class Imunisasi extends AppCompatActivity {
                     ImunisasiData imunisasiData = new ImunisasiData(userID, nama, umurAnak, nikAnak, tanggal, lokasi, userID);
                     dbFirebase.addImunisasiData(imunisasiData);
 
-                    Toast.makeText(Imunisasi.this, "Registrasi berhasil",Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(Imunisasi.this, MainActivity.class);
+                    Toast.makeText(Imunisasi.this, "Registrasi berhasil", Toast.LENGTH_LONG).show();
+
+                    // Mengirim data tanggal imunisasi ke StatusActivity
+                    Intent intent = new Intent(Imunisasi.this, StatusActivity.class);
+                    intent.putExtra("tanggalImunisasi", tanggal);
                     startActivity(intent);
                     finish();
                 }
