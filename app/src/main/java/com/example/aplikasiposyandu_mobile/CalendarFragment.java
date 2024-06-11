@@ -6,12 +6,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CalendarView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class CalendarFragment extends Fragment {
 
     private CalendarView calendarView;
     private TextView scheduleText;
+    private Map<String, String> scheduleData = new HashMap<>();
 
     public CalendarFragment() {
         // Required empty public constructor
@@ -20,6 +34,7 @@ public class CalendarFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        fetchScheduleData();
     }
 
     @Override
@@ -32,12 +47,7 @@ public class CalendarFragment extends Fragment {
         calendarView = view.findViewById(R.id.calendar_view);
 
         // Initialize the TextView
-        scheduleText = view.findViewById(R.id.schedule_text);
-
-        // Example schedule data
-        final Map<String, String> scheduleData = new HashMap<>();
-        scheduleData.put("15/6/2024", "Pemeriksaan Balita pada jam 10:00 AM");
-        scheduleData.put("20/6/2024", "Pemberian Imunisasi pada jam 08:00 AM");
+        scheduleText = view.findViewById(R.id.JadwalTanggal);
 
         // Set listener for date selection
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -55,5 +65,32 @@ public class CalendarFragment extends Fragment {
         });
 
         return view;
+    }
+
+    private void fetchScheduleData() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            String userID = user.getUid();
+            DatabaseReference reference = FirebaseDatabase.getInstance("https://aplikasiposyandu-mobile-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("imunisasi");
+            reference.orderByChild("userID").equalTo(userID).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    scheduleData.clear();
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        ImunisasiData data = snapshot.getValue(ImunisasiData.class);
+                        if (data != null) {
+                            String date = data.getTanggalImunisasi();
+                            String schedule = "Nama Anak: " + data.getNama();
+                            scheduleData.put(date, schedule);
+                        }
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    // Handle possible errors.
+                }
+            });
+        }
     }
 }
