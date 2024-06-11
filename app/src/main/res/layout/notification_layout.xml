@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/app_logo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_launcher_imunisasi"
+        android:scaleType="centerInside"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/NotifTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Judul"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_toEndOf="@id/app_logo"
+        android:layout_marginStart="8dp"
+        android:layout_alignTop="@id/app_logo"/>
+
+    <TextView
+        android:id="@+id/Description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ini adalah deskripsi"
+        android:textSize="14sp"
+        android:layout_toEndOf="@id/app_logo"
+        android:layout_marginStart="8dp"
+        android:layout_below="@id/NotifTitle"/>
+
+</RelativeLayout>

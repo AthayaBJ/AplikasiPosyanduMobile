@@ -3,6 +3,7 @@ package com.example.aplikasiposyandu_mobile;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
+    public static Activity instance;
     private BottomNavigationView bottomNavigationView;
     private HomeFragment homeFragment = new HomeFragment();
     private CalendarFragment calendarFragment = new CalendarFragment();
